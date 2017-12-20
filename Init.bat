@@ -2,6 +2,12 @@
 title First Time Initialization
 
 D:
+cd D:\Install bat
+
+echo Current Working Directory :
+echo %cd%
+echo.
+
 if not exist "D:\Users\user\AppData\Local\Google" (  
    mkdir "D:\Users\user\AppData\Local\Google"
 ) 
@@ -18,10 +24,6 @@ if not exist "D:\Program Files (x86)\GIGABYTE" (
    mkdir "D:\Program Files (x86)\GIGABYTE"
 ) 
 MKLINK /J "C:\Program Files (x86)\GIGABYTE" "D:\Program Files (x86)\GIGABYTE"
-if not exist "D:\Users\user\AppData\Local\Turbo" (  
-   mkdir "D:\Users\user\AppData\Local\Turbo"
-) 
-MKLINK /J "C:\Users\user\AppData\Local\Turbo" "D:\Users\user\AppData\Local\Turbo"
 if not exist "D:\Users\user\AppData\Roaming\VOS" (  
    mkdir "D:\Users\user\AppData\Roaming\VOS"
 ) 
@@ -29,6 +31,9 @@ MKLINK /J "C:\Users\user\AppData\Roaming\VOS" "D:\Users\user\AppData\Roaming\VOS
 
 "ChromeSetup.exe"
 "7-Zip.exe"
+"VideoLAN.exe"
 
-print "b"
+reg import disable_auto_installer.reg
+echo.
+echo Installation Complete
 pause
